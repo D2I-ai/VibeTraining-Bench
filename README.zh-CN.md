@@ -1,0 +1,64 @@
+<div align="center">
+
+# VibeTraining-Bench
+
+### 数据–训练器–Harness 协同设计，面向迭代式系统改进
+
+Ruotian Peng, Yuanyi Ren, Shuaiqi Liu, Xin Guo, Fang Zhu, Yangyi Huang, Yue Wu, Zheng Wang, Yandong Wen, Zhihang Fu<br>
+浙江大学 · 西湖大学 · 阿里巴巴 Token Hub · 华南理工大学 · 香港中文大学
+
+[![Paper](https://img.shields.io/badge/Paper-arXiv%3A2610.26342-blue)](https://arxiv.org/abs/2610.26342)
+[![Code](https://img.shields.io/badge/Code-Coming%20Soon-orange)](#即将开源)
+[![Benchmark](https://img.shields.io/badge/Benchmark-Coming%20Soon-orange)](#即将开源)
+
+[English](./README.md) | **中文版**
+
+一个评估研究 agent 能否同时改进 **训练数据**、**训练器** 与 **推理 harness** 的基准——这正是递归自改进所依赖的跨组件协同设计能力。
+
+</div>
+
+---
+
+## 概览
+
+递归自改进（Recursive Self-Improvement, RSI）要求 agent 能够诊断系统瓶颈，并在训练与推理两侧协同推进改进。我们将 agent 同时优化训练数据、训练器与推理 harness 的能力称为 **跨组件协同设计（cross-component co-design）**。
+
+**VibeTraining-Bench** 在终端操作、软件工程、多轮工具调用与数学推理等任务上评估这一能力。在每个任务中，研究 agent 从完全相同的初始 agent 系统出发，并在固定资源预算下工作。它们依据验证反馈迭代改进数据、训练器与推理 harness，随后选出最终 agent 系统并提交，在测试集上接受评测。
+
+为防止 reward hacking，基准设置了三项防护措施：测试数据隔离、研究容器与评分容器分离，以及对研究 agent 的网络访问限制。
+
+![VibeTraining-Bench 总览](assets/images/main_figure.png)
+
+*研究 agent 在固定预算下从共享的初始资源出发，依据验证反馈迭代协同设计数据、训练器与推理 harness，并提交最终系统在隐藏测试集上接受评分。*
+
+## 核心特点
+
+- **跨组件，而非单组件**：agent 必须协同设计数据、训练与推理，而不是孤立地调优某一个模块。
+- **受控对比**：所有研究 agent 从相同的初始 agent 系统出发，并在相同的资源预算下运行。
+- **抗作弊评测**：评分与研究过程隔离，研究阶段受到严格的网络限制。
+- **有增益，也有明显空间**：在 SWE-bench Verified 上，研究 agent GPT-6-Astra 将目标 agent 系统的性能从 32.9% 提升至 53.7%，接近人工开发的 instruct 模型的 55.4%；但如何通过迭代获得累积增益，仍是待解问题。
+
+## 即将开源
+
+我们正在完成开源发布的最后准备工作。本仓库将包含：
+
+- 覆盖四个评测领域的 VibeTraining-Bench 任务集
+- 评测 harness，包括研究/评分容器分离与网络限制机制
+- 参考配置、基线系统与实验结果
+
+敬请关注本仓库的后续更新。
+
+## 引用
+
+如果本工作对你有帮助，欢迎引用我们的论文。
+
+```bibtex
+@misc{peng2026vibetrainingbench,
+  title         = {VibeTraining-Bench: Data-Trainer-Harness Co-Design for Iterative System Improvement},
+  author        = {Ruotian Peng and Yuanyi Ren and Shuaiqi Liu and Xin Guo and Fang Zhu and Yangyi Huang and Yue Wu and Zheng Wang and Yandong Wen and Zhihang Fu},
+  year          = {2026},
+  eprint        = {2610.26342},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI}
+}
+```
