@@ -8,6 +8,7 @@ Ruotian Peng, Yuanyi Ren, Shuaiqi Liu, Xin Guo, Fang Zhu, Yangyi Huang, Yue Wu, 
 浙江大学 · 西湖大学 · 阿里巴巴 Token Hub · 华南理工大学 · 香港中文大学
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv%3A2610.26342-blue)](https://arxiv.org/abs/2610.26342)
+[![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://d2i-ai.github.io/VibeTraining-Bench/index.zh.html)
 [![Code](https://img.shields.io/badge/Code-Coming%20Soon-orange)](#即将开源)
 [![Benchmark](https://img.shields.io/badge/Benchmark-Coming%20Soon-orange)](#即将开源)
 
