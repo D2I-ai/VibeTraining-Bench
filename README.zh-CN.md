@@ -32,6 +32,10 @@ Ruotian Peng, Yuanyi Ren, Shuaiqi Liu, Xin Guo, Fang Zhu, Yangyi Huang, Yue Wu, 
 
 *研究 agent 在固定预算下从共享的初始资源出发，依据验证反馈迭代协同设计数据、训练器与推理 harness，并提交最终系统在隐藏测试集上接受评分。*
 
+## 与我们先前综述的关系
+
+VibeTraining-Bench 以我们先前综述 [*The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions*](https://www.preprints.org/manuscript/202608.0051)（Liu 等，2026）提出的统一研究框架为基础。该框架将基础模型、agent harness、agent 数据系统、agent 训练器与改进机制建模为一个耦合演化系统，以刻画自改进的范围与依赖关系。在此框架下，VibeTraining-Bench 对跨组件协同设计进行受控评测，考察研究 agent 能否在固定资源预算下协同改进训练数据、训练器与推理 harness。
+
 ## 核心特点
 
 - **跨组件，而非单组件**：agent 必须协同设计数据、训练与推理，而不是孤立地调优某一个模块。
@@ -61,5 +65,18 @@ Ruotian Peng, Yuanyi Ren, Shuaiqi Liu, Xin Guo, Fang Zhu, Yangyi Huang, Yue Wu, 
   eprint        = {2610.26342},
   archivePrefix = {arXiv},
   primaryClass  = {cs.AI}
+}
+```
+
+```bibtex
+@article{202608.0051,
+  doi       = {10.20944/preprints202608.0051.v1},
+  url       = {https://www.preprints.org/manuscript/202608.0051},
+  year      = {2026},
+  month     = {August},
+  publisher = {Preprints},
+  author    = {Shuaiqi Liu and Zhengkai Lin and Yuxiang Zhang and Yuanyi Ren and Yue Wu and Yongbin Li and Zheng Wang and Zhihang Fu and Jieping Ye},
+  title     = {The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions},
+  journal   = {Preprints}
 }
 ```
