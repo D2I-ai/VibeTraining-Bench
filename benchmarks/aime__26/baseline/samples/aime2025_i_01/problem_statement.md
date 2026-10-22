@@ -1,0 +1,1 @@
+Find the sum of all integer bases $b>9$ for which $17_{b}$ is a divisor of $97_{b}$.

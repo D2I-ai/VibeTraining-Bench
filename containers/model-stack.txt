@@ -1,0 +1,33 @@
+# The model stack contract: versions that must agree across every image that
+# touches model weights (trainer, sglang).
+#
+# This is not an install list. Each image gets its stack from its upstream base
+# -- slime for the trainer, sglang for the server -- and reinstalling any
+# of these on top would break the base's own compiled extensions. What this file
+# does is state the compatibility window and let `check_stack.py` fail a build
+# that falls outside it, so drift is caught at build time instead of showing up
+# as a quality regression nobody can explain.
+#
+# Why these three, and nothing else:
+#
+# transformers  the checkpoint format. The trainer writes config.json with the
+#               v5 layout (nested rope_parameters, `dtype` rather than
+#               `torch_dtype`); an incompatible reader can silently fall back to
+#               incorrect RoPE defaults and change evaluation behavior.
+# tokenizers    the tokenizer and EOS/chat-template handling that determine
+#               where generation stops.
+# torch         the compiled floor under both: flash-attn, the sglang
+#               kernels and megatron are all built against one minor version,
+#               and a mismatch is an import-time or numerics failure.
+#
+# Everything else (accelerate, peft, datasets, hub client) is internal to one
+# image and does not cross the trainer/server boundary, so it is left to the
+# base image rather than pinned twice.
+#
+# Reference point: the digest-pinned trainer and SGLang images both report
+# torch 2.11.0+cu129, transformers 5.12.1, and tokenizers 0.22.2. Exact values
+# are required because the image digests, checkpoint writer, and reader are fixed.
+
+torch==2.11.0+cu129
+transformers==5.12.1
+tokenizers==0.22.2

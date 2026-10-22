@@ -1,0 +1,40 @@
+Toolathlon Verified (VTB): the official held-out final test set contains
+88 MCP tool-use tasks selected from the upstream 108-task finalpool,
+including Kubernetes/Kind tasks. Twenty tasks requiring unavailable
+external credentials or state are excluded: 7 Google Cloud tasks,
+8 Notion-state tasks, 4 Snowflake tasks, and woocommerce-new-welcome.
+The ordered task list is defined by manifest.json.
+
+Architecture role (the split the whole repo is built around):
+  validation (agent-visible, tuned against)  = eigent-ai__toolathlon_gym's 12 tasks
+  final test   (held-out, measures the end   = THIS benchmark, routed by
+                result of the whole evolution)   benchmarks/eigent-ai__toolathlon_gym/
+                                                 split.json test.benchmark
+
+The Verified pool is disjoint from the 12 Gym validation tasks.
+
+Same HTTP-service shape as toolathlon_gym (POST /evaluate + GET /jobs/{id},
+12-way per-task concurrency, per-task container/network isolation), but a
+different harness inside: the official OpenAI Agents SDK agent (not camel),
+the official phased flow (preprocess -> stash -> agent -> restore -> eval,
+with the evaluator hidden from the agent and agent-forged results dropped),
+and no postgres dependency. Wall clock per task is capped at TASK_TIMEOUT
+(2700s default, 45 min) by the service, so a runaway task grades 0 instead of
+hanging the job. Runs on port 8061.
+
+Example for a single-host Docker deployment:
+  VTB_TOOLATHLON_VERIFIED_URL=http://172.17.0.1:8061
+  VTB_MODEL_ADVERTISE_HOST=172.17.0.1
+(same docker0-gateway pattern the gym service uses -- task containers cannot
+reach loopback endpoints).
+
+Budget note: 88 tasks / 12-way concurrency is ~8 waves; with the 45 min
+per-task ceiling and one crash retry, official runs need the adapter's
+VTB_TOOLATHLON_VERIFIED_TIMEOUT (default 13500s = 3.75 h) and the grading
+service's VTB_GRADING_EVAL_TIMEOUT raised accordingly.
+
+Privacy: this directory deliberately carries no task_context, and the
+service's unauthenticated GET /tasks answers with a COUNT only -- the task
+ids are the manifest's to hand to the service, never the agent's to see.
+Official evaluations of eigent-ai__toolathlon_gym are routed here by split.json's
+test.benchmark field.
