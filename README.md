@@ -32,6 +32,10 @@ To prevent reward hacking, the benchmark enforces three safeguards: test data is
 
 *Research agents start from shared initial resources under a fixed budget, iteratively co-design data, trainer, and inference harness using validation feedback, and submit the final system for grading on a hidden test set.*
 
+## Relation to Our Prior Survey
+
+VibeTraining-Bench builds on the unified research framework introduced in our prior survey, [*The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions*](https://www.preprints.org/manuscript/202608.0051) (Liu et al., 2026). This framework models the foundation model, agent harness, agent data system, agent trainer, and improvement mechanism as a coupled evolving system to characterize the scope, dependencies, and dynamics of self-improvement. Within this framework, VibeTraining-Bench provides a controlled evaluation of cross-component co-design, assessing whether research agents can jointly improve training data, the trainer, and the inference harness under a fixed resource budget.
+
 ## Highlights
 
 - **Cross-component, not single-component**: agents must co-design data, training, and inference rather than tuning one module in isolation.
@@ -61,5 +65,18 @@ If you find this work useful, please cite our paper.
   eprint        = {2610.26342},
   archivePrefix = {arXiv},
   primaryClass  = {cs.AI}
+}
+```
+
+```bibtex
+@article{202608.0051,
+  doi       = {10.20944/preprints202608.0051.v1},
+  url       = {https://www.preprints.org/manuscript/202608.0051},
+  year      = {2026},
+  month     = {August},
+  publisher = {Preprints},
+  author    = {Shuaiqi Liu and Zhengkai Lin and Yuxiang Zhang and Yuanyi Ren and Yue Wu and Yongbin Li and Zheng Wang and Zhihang Fu and Jieping Ye},
+  title     = {The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions},
+  journal   = {Preprints}
 }
 ```
