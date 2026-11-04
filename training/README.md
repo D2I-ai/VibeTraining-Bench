@@ -58,7 +58,7 @@ Start the matching grading service and check `health` first. `RECIPE` overrides 
 | Benchmark | Default recipe | Training data |
 |---|---|---|
 | SWE-Bench Verified | `slime_sft_swe` | Four pinned HF datasets. |
-| Terminal-Bench 2.1 | `slime_sft_terminal` | Three files pinned from `prt66/terminal_data`. |
+| Terminal-Bench 2.1 | `slime_sft_terminal` | Three files pinned from [`rsi-research/VibeTraining-Bench/terminal_data`](https://huggingface.co/datasets/rsi-research/VibeTraining-Bench/tree/main/terminal_data). |
 | Tau3-Bench | `slime_sft_tau` | All three training corpora pinned; JSON split downloaded separately from training files. |
 | Toolathlon | `slime_sft_toolathlon` | Pinned HF pool. |
 | AIME | `slime_sft_aime` | Three pinned mathematics sources materialized into one 1,229,249-row JSONL. |

@@ -6,11 +6,11 @@ from outside it.
 
 ## Location
 
-The pool is the Hugging Face dataset `guoxinzju/vibetrainbench-toolathlon`
-(single file `dive-mix8000.jsonl`), declared to the recipe as the pinned,
+The pool is the Hugging Face dataset `rsi-research/VibeTraining-Bench`
+(single file `toolathlon_data/dive-mix8000.jsonl`), declared to the recipe as the pinned,
 read-only offline HF-cache resource `data/toolathlon_dive_mix8000`.
 Load it from that resource's declared `snapshot_path`
-(`.../snapshots/<revision>/dive-mix8000.jsonl`) -- not by repo id -- and write
+(`.../snapshots/<revision>/toolathlon_data/dive-mix8000.jsonl`) -- not by repo id -- and write
 the subset you train on to `train.jsonl` in your workspace (a straight copy
 trains on the whole pool). See the resource's `resource_config.json` for the
 exact revision and offline load hint.

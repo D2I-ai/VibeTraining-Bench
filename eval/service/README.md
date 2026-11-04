@@ -46,8 +46,8 @@ Evaluation task definitions and the Gym database seed are included in the two pi
 checkouts above; there is no separate evaluation-dataset download. The Verified task runtime
 is supplied by its Docker image, which the service launcher pulls automatically.
 
-The default Toolathlon training recipe uses the pinned `dive-mix8000.jsonl` pool from
-`guoxinzju/vibetrainbench-toolathlon`. Download it before formal training. The dedicated
+The default Toolathlon training recipe uses the pinned `toolathlon_data/dive-mix8000.jsonl` pool from
+[`rsi-research/VibeTraining-Bench`](https://huggingface.co/datasets/rsi-research/VibeTraining-Bench). Download it before formal training. The dedicated
 no-training smoke needs the base-model snapshot and evaluation services, not this pool.
 Run from the repository root after building `vibetrainbench/trainer:latest`:
 

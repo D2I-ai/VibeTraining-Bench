@@ -125,12 +125,12 @@ class ResourceFlowTest(unittest.TestCase):
             self.assertEqual(cache_check.download_recipe("qwen3_5_9b/slime_sft_tau"), [])
             argv = run.call_args.args[0]
             self.assertEqual(argv.count("--include"), 3)
-            self.assertIn("ec268e4c203bb9e015ce759813f57fae599c88c4", argv)
+            self.assertIn("5f7a96d328f8de101dee0eee3bd589be794fbab3", argv)
             self.assertFalse(any("eval/" in arg for arg in argv))
 
     def test_tau_nemotron_is_pinned_and_split_is_not_training(self):
         _, cfg = assets.read_resource(REPO, "data/tau_data")
-        self.assertEqual(cfg["revision"], "ec268e4c203bb9e015ce759813f57fae599c88c4")
+        self.assertEqual(cfg["revision"], "5f7a96d328f8de101dee0eee3bd589be794fbab3")
         self.assertEqual(len(cfg["data_files"]), 3)
         self.assertTrue(any("Nemotron" in name for name in cfg["data_files"].values()))
         self.assertFalse(any(name.startswith("eval/") for name in cfg["data_files"].values()))
@@ -145,8 +145,8 @@ class ResourceFlowTest(unittest.TestCase):
 
     def test_terminal_and_aime_sources_are_pinned(self):
         _, terminal = assets.read_resource(REPO, "data/terminal")
-        self.assertEqual(terminal["repo_id"], "prt66/terminal_data")
-        self.assertEqual(terminal["revision"], "dd833a625e032842b2d84bd2b993b7c40e301f3c")
+        self.assertEqual(terminal["repo_id"], "rsi-research/VibeTraining-Bench")
+        self.assertEqual(terminal["revision"], "5f7a96d328f8de101dee0eee3bd589be794fbab3")
         self.assertEqual(len(terminal["data_files"]), 3)
         expected = {
             "data/aime_open_thoughts3": "61bcf9d4eb38b30295efc2021227a63cc5bb34c8",

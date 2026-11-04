@@ -173,9 +173,9 @@ Prepare the declared resources before running formal preflight.
 | SWE | SWE-Dev-train | `zai-org/SWE-Dev-train` | `5888e5864886590ead78a69b6e60490a0d89a594` |
 | SWE | SWE-rebench OpenHands trajectories | `nebius/SWE-rebench-openhands-trajectories` | `35455389ab51bf5e2306bfd436ef72d0f98bf882` |
 | SWE | Open-SWE-Traces | `nvidia/Open-SWE-Traces` | `985223d41b0fbe8b913ae13c4b833e1007c60854` |
-| Toolathlon | VibeTrainBench Toolathlon pool | `guoxinzju/vibetrainbench-toolathlon` | `22acd607a1e5be5a8dcac4fd0298c6e746b4b6aa` |
-| Tau3 | AReaL, Nemotron interactive-agent, Simia | `Shuaiqi/Tau_Data` | `ec268e4c203bb9e015ce759813f57fae599c88c4` |
-| Terminal | RTS reward-1, Terminal trajectories, TMAX RTS-style Qwen3.5 | `prt66/terminal_data` | `dd833a625e032842b2d84bd2b993b7c40e301f3c` |
+| Toolathlon | VibeTrainBench Toolathlon pool | [`rsi-research/VibeTraining-Bench/toolathlon_data`](https://huggingface.co/datasets/rsi-research/VibeTraining-Bench/tree/main/toolathlon_data) | `5f7a96d328f8de101dee0eee3bd589be794fbab3` |
+| Tau3 | AReaL, Nemotron interactive-agent, Simia | [`rsi-research/VibeTraining-Bench/Tau_Data/train`](https://huggingface.co/datasets/rsi-research/VibeTraining-Bench/tree/main/Tau_Data/train) | `5f7a96d328f8de101dee0eee3bd589be794fbab3` |
+| Terminal | RTS reward-1, Terminal trajectories, TMAX RTS-style Qwen3.5 | [`rsi-research/VibeTraining-Bench/terminal_data`](https://huggingface.co/datasets/rsi-research/VibeTraining-Bench/tree/main/terminal_data) | `5f7a96d328f8de101dee0eee3bd589be794fbab3` |
 | AIME | OpenThoughts3-1.2M | `open-thoughts/OpenThoughts3-1.2M` | `61bcf9d4eb38b30295efc2021227a63cc5bb34c8` |
 | AIME | Nemotron-SFT-Math-v4 | `nvidia/Nemotron-SFT-Math-v4` | `84d42ad0cb960f07f951b9baa9ed2b46a5a18c66` |
 | AIME | OpenR1-Math-220k default | `open-r1/OpenR1-Math-220k` | `e4e141ec9dea9f8326f4d347be56105859b2bd68` |

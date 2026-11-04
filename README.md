@@ -11,6 +11,7 @@ Zhejiang University · Westlake University · Alibaba Token Hub · South China U
 [![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://d2i-ai.github.io/VibeTraining-Bench/index.html)
 [![Survey](https://img.shields.io/badge/Survey-Preprints-green)](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
 [![Code](https://img.shields.io/badge/Code-Repository-brightgreen)](#quickstart)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Datasets-yellow)](https://huggingface.co/datasets/rsi-research/VibeTraining-Bench)
 [![Benchmarks](https://img.shields.io/badge/Benchmarks-5-blueviolet)](benchmarks/README.md)
 
 **English** | [中文版](README.zh-CN.md)

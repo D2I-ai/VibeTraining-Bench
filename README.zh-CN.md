@@ -11,6 +11,7 @@ Ruotian Peng, Yuanyi Ren, Shuaiqi Liu, Xin Guo, Fang Zhu, Yangyi Huang, Yue Wu, 
 [![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://d2i-ai.github.io/VibeTraining-Bench/index.zh.html)
 [![Survey](https://img.shields.io/badge/Survey-Preprints-green)](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
 [![代码](https://img.shields.io/badge/Code-Repository-brightgreen)](#快速开始)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Datasets-yellow)](https://huggingface.co/datasets/rsi-research/VibeTraining-Bench)
 [![基准](https://img.shields.io/badge/Benchmarks-5-blueviolet)](benchmarks/README.md)
 
 [English](README.md) | **中文版**
